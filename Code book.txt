@@ -1,0 +1,163 @@
+Feature Selection 
+=================
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
+mad(): Median absolute deviation 
+max(): Largest value in array
+min(): Smallest value in array
+sma(): Signal magnitude area
+energy(): Energy measure. Sum of the squares divided by the number of values. 
+iqr(): Interquartile range 
+entropy(): Signal entropy
+arCoeff(): Autorregresion coefficients with Burg order equal to 4
+correlation(): correlation coefficient between two signals
+maxInds(): index of the frequency component with largest magnitude
+meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+skewness(): skewness of the frequency domain signal 
+kurtosis(): kurtosis of the frequency domain signal 
+bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+angle(): Angle between to vectors.
+
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+
+gravityMean
+tBodyAccMean
+tBodyAccJerkMean
+tBodyGyroMean
+tBodyGyroJerkMean
+
+Additional variable name
+
+features: table for feature variable
+activity_labels: table for activities
+x_train: data of features of training set
+y_train: activity of training set
+subject_train: identification of who do the activity of training set
+x_test: data of features of test set
+y_test: activity of test set
+subject_test: identification of who do the activity of test set
+train_merge: table combine training set in column for x_train, y_train, and subject_train
+test_merge: table combine test set in column for x_test, y_test, and subject_test
+all_merge: table combine train_merge and test_merge in row.
+extract_index: vector of indices that contain mean and standard of features, activity, and subject.
+extract: subset mean and standard of features, activity, and subject from all_merge variable.
+Avg: mean values of variable in extract grouped by activity, and subject.
+
+Unit
+
+tBodyAcc-mean()-X: g
+tBodyAcc-mean()-Y: g
+tBodyAcc-mean()-Z: g
+tBodyAcc-std()-X: g
+tBodyAcc-std()-Y: g
+tBodyAcc-std()-Z: g
+tGravityAcc-mean()-X: g
+tGravityAcc-mean()-Y: g
+tGravityAcc-mean()-Z: g
+tGravityAcc-std()-X: g
+tGravityAcc-std()-Y: g
+tGravityAcc-std()-Z: g
+tBodyAccJerk-mean()-X: g
+tBodyAccJerk-mean()-Y: g
+tBodyAccJerk-mean()-Z: g
+tBodyAccJerk-std()-X: g
+tBodyAccJerk-std()-Y: g
+tBodyAccJerk-std()-Z: g
+tBodyGyro-mean()-X: radians/second
+tBodyGyro-mean()-Y: radians/second
+tBodyGyro-mean()-Z: radians/second
+tBodyGyro-std()-X: radians/second
+tBodyGyro-std()-Y: radians/second
+tBodyGyro-std()-Z: radians/second
+tBodyGyroJerk-mean()-X: radians/second
+tBodyGyroJerk-mean()-Y: radians/second
+tBodyGyroJerk-mean()-Z: radians/second
+tBodyGyroJerk-std()-X: radians/second
+tBodyGyroJerk-std()-Y: radians/second
+tBodyGyroJerk-std()-Z: radians/second
+tBodyAccMag-mean(): g
+tBodyAccMag-std(): g
+tGravityAccMag-mean(): g
+tGravityAccMag-std(): g
+tBodyAccJerkMag-mean(): g
+tBodyAccJerkMag-std(): g
+tBodyGyroMag-mean(): radians/second
+tBodyGyroMag-std(): radians/second
+tBodyGyroJerkMag-mean(): radians/second
+tBodyGyroJerkMag-std(): radians/second
+fBodyAcc-mean()-X: g
+fBodyAcc-mean()-Y: g
+fBodyAcc-mean()-Z: g
+fBodyAcc-std()-X: g
+fBodyAcc-std()-Y: g
+fBodyAcc-std()-Z: g
+fBodyAcc-meanFreq()-X: g
+fBodyAcc-meanFreq()-Y: g
+fBodyAcc-meanFreq()-Z: g
+fBodyAccJerk-mean()-X: g
+fBodyAccJerk-mean()-Y: g
+fBodyAccJerk-mean()-Z: g
+fBodyAccJerk-std()-X: g
+fBodyAccJerk-std()-Y: g
+fBodyAccJerk-std()-Z: g
+fBodyAccJerk-meanFreq()-X: g
+fBodyAccJerk-meanFreq()-Y: g
+fBodyAccJerk-meanFreq()-Z: g
+fBodyGyro-mean()-X: radians/second
+fBodyGyro-mean()-Y: radians/second
+fBodyGyro-mean()-Z: radians/second
+fBodyGyro-std()-X: radians/second
+fBodyGyro-std()-Y: radians/second
+fBodyGyro-std()-Z: radians/second
+fBodyGyro-meanFreq()-X: radians/second
+fBodyGyro-meanFreq()-Y: radians/second
+fBodyGyro-meanFreq()-Z: radians/second
+fBodyAccMag-mean(): g
+fBodyAccMag-std(): g
+fBodyAccMag-meanFreq(): g
+fBodyBodyAccJerkMag-mean(): g
+fBodyBodyAccJerkMag-std(): g
+fBodyBodyAccJerkMag-meanFreq(): g
+fBodyBodyGyroMag-mean(): radians/second
+fBodyBodyGyroMag-std(): radians/second
+fBodyBodyGyroMag-meanFreq(): radians/second
+fBodyBodyGyroJerkMag-mean(): radians/second
+fBodyBodyGyroJerkMag-std(): radians/second
+fBodyBodyGyroJerkMag-meanFreq(): radians/second
+angle(tBodyAccMean,gravity): degree
+angle(tBodyAccJerkMean),gravityMean): degree
+angle(tBodyGyroMean,gravityMean): degree
+angle(tBodyGyroJerkMean,gravityMean): degree
+angle(X,gravityMean): degree
+angle(Y,gravityMean): degree
+angle(Z,gravityMean): degree
